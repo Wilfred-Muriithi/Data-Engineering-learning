@@ -58,3 +58,27 @@ SELECT * FROM Customers;
 SELECT * FROM Products;
 SELECT * FROM Orders;
 SELECT * FROM OrderDetails;
+
+SELECT Customers.FirstNAme, Customers.LastName, Orders.OrderDate
+FROM Customers
+INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+
+
+SELECT Customers.FirstName, Customers.LastName, Orders.OrderDate
+FROM Customers
+LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+;
+
+
+SELECT FirstName, LastName
+FROM Customers
+WHERE CustomerID iN (
+    SELECT Orders.CustomerID
+    FROM Orders
+    INNER JOIN OrderDetails on Orders.OrderID = OrderDetails.OrderID
+    INNER JOIN Products on OrderDetails.ProductID = Products.ProductID
+    GROUP BY Orders.CustomerID
+    HAVING SUM(Products.Price*OrderDetails.Quantity) > 500
+    )
+;
+
