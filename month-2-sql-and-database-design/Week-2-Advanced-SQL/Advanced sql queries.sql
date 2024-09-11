@@ -1,3 +1,4 @@
+-- Active: 1725279039453@@127.0.0.1@5432@Month2-week2
 CREATE TABLE Customers (
     CustomerID SERIAL PRIMARY KEY,
     FirstName VARCHAR (100),
@@ -34,3 +35,26 @@ VALUES('John','Maina','maishjohn@gmail.com'),
 ('Quavo','Huncho','huncho@gmail.com')
 ;
 
+INSERT INTO Products (ProductName, Price)  
+VALUES('Lenovo Ideapad', 2000.00),
+('Samsung Galaxy', 990.00),
+('Airpods pro', 299.99),
+('Dual monitor', 566.00)
+;
+
+INSERT INTO Orders(OrderDate, CustomerID)
+VALUES('2024-09-10', 1),
+('2024-09-11', 2),
+('2024-09-12', 3)
+;
+
+INSERT INTO OrderDetails(OrderID, ProductID, Quantity)
+VALUES(1, 1, 2),
+(1, 2, 1),
+(2, 3, 1)
+;
+
+SELECT * FROM Customers;
+SELECT * FROM Products;
+SELECT * FROM Orders;
+SELECT * FROM OrderDetails;
