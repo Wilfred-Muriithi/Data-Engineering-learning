@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "ww profit report"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "fcdd1958-ef89-4b95-999b-78f5fba65b37"
+  }
+}
