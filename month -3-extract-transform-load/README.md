@@ -1,0 +1,1 @@
+Data ingestion, tranformation using pyspark and storage to onelake in Microsoft Fabric.
